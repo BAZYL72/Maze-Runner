@@ -1,81 +1,147 @@
-Maze Runner – Multi-Level Console Game (x86 Assembly)
-Maze Runner is a retro-style, text-based maze game built in 80386 Intel x86 (32-bit) Assembly Language using the Irvine32 library.
+## Maze Runner – Multi-Level Console Game (x86 Assembly)
 
-The player must navigate through three progressively challenging mazes, avoid walls, and reach the exit to advance.
+Maze Runner is a text-based maze game built in 80386 Intel x86 (32-bit) Assembly Language using the Irvine32 library.
 
-Game Overview
-You control a player inside a maze and must reach the exit without walking into walls.
+The player navigates through three progressively difficult mazes, avoids walls, and reaches the exit to advance.
 
-Symbols used in the game:
+---
 
-Symbol	Meaning
-@	Player
-E	Exit
-█ or `	`
-Space	Walkable path
-The game starts with a title screen, followed by an instruction screen, and then launches into Level 1.
-Completing a level automatically loads the next maze.
+## Game Overview
 
-Levels
-The game contains three handcrafted maze levels, each more complex than the last:
+You control a player inside a maze and must reach the exit without hitting walls.
 
-Level	Description
-Level 1	Small maze to introduce movement and collision
-Level 2	Medium maze with tighter paths
-Level 3	Large, dense maze requiring careful navigation
-The player’s position and the exit location are tracked internally and updated in real time.
+### Symbols Used
 
-Controls
-You can move the player using either:
+| Symbol         | Meaning       |
+| -------------- | ------------- |
+| `@`            | Player        |
+| `E`            | Exit          |
+| `█` or `` ` `` | Wall          |
+| Space          | Walkable path |
 
-W A S D
-Arrow Keys
-Key	Action
-W / ↑	Move Up
-S / ↓	Move Down
-A / ←	Move Left
-D / →	Move Right
-Movement is blocked if a wall is in the way.
+The game starts with:
 
-How It Works
-This game uses:
+* Title screen
+* Instructions screen
+* Level 1
 
-2D character arrays stored in memory to represent each maze
-Direct console cursor positioning for rendering
-Keyboard input polling via Irvine32
-Collision detection by checking map values before moving
-Level switching when the player reaches E
-Each level has its own maze layout and starting position.
+Each completed level automatically loads the next maze.
 
-Built With
-Intel x86 Assembly (80386, 32-bit)
-MASM
-Irvine32 Library
-Visual Studio
-How to Run
-Install Visual Studio
-Install and configure Irvine32 for MASM
-Open Maze_Runner_MultiLevel.sln
-Build in Win32 Debug mode
-Run Maze_Runner_MultiLevel.exe
-Project Structure
+---
+
+## Levels
+
+| Level   | Description                                   |
+| ------- | --------------------------------------------- |
+| Level 1 | Small maze introducing movement and collision |
+| Level 2 | Medium maze with tighter paths                |
+| Level 3 | Large dense maze requiring precise navigation |
+
+Each level includes:
+
+* Unique maze layout
+* Defined start position
+* Exit tracking
+
+---
+
+## Controls
+
+| Key   | Action     |
+| ----- | ---------- |
+| W / ↑ | Move Up    |
+| S / ↓ | Move Down  |
+| A / ← | Move Left  |
+| D / → | Move Right |
+
+Movement is blocked if a wall is detected.
+
+---
+
+## How It Works
+
+* 2D character arrays represent each maze
+* Console cursor positioning is used for rendering
+* Keyboard input is handled via Irvine32
+* Collision detection checks map values before movement
+* Level transitions trigger when the player reaches `E`
+
+---
+
+## Core Mechanics
+
+* Real-time input handling
+* Grid-based movement system
+* State-based level progression
+* Console rendering loop
+* Memory-based maze representation
+
+---
+
+## Built With
+
+* Intel x86 Assembly (80386, 32-bit)
+* MASM
+* Irvine32 Library
+* Visual Studio
+
+---
+
+## How to Run
+
+1. Install Visual Studio
+2. Install and configure Irvine32 for MASM
+3. Open the solution file:
+
+   ```
+   Maze_Runner_MultiLevel.sln
+   ```
+4. Build in Win32 Debug mode
+5. Run:
+
+   ```
+   Maze_Runner_MultiLevel.exe
+   ```
+
+---
+
+## Project Structure
+
+```
 Maze_Runner_MultiLevel/
 ├── main.asm
 ├── Maze_Runner_MultiLevel.sln
 ├── Maze_Runner_MultiLevel.vcxproj
 └── Maze_Runner_MultiLevel.vcxproj.filters
-What This Project Demonstrates
-Assembly-level game loops
-Real-time keyboard input
-Map-based collision detection
-Multi-level game state management
-Console UI rendering
-Low-level memory handling
-Goal
-Reach the E (Exit) in all three levels to win the game.
+```
 
-License
-This project is licensed under the MIT License.
+---
 
-Author
-Arsalan Tahir , Usayd Arsalan , Bazyl Sheikh
+## What This Project Demonstrates
+
+* Assembly-level game loop design
+* Real-time keyboard input handling
+* Collision detection logic
+* Multi-level game state management
+* Console-based rendering system
+* Low-level memory handling
+
+---
+
+## Goal
+
+Reach `E` (Exit) in all three levels to complete the game.
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Authors
+
+* Arsalan Tahir
+* Usayd Arsalan
+* Bazyl Sheikh
